@@ -36,3 +36,9 @@ exports.getProducts = ( req, res, next ) => {
         });
     });
 }
+
+exports.deleteProduct = ( req, res, next) => {
+    let id = req.params.id; // params.id matches id in the path requested
+    console.log(`id:${id}`);
+    res.send("ID = " + id);
+}

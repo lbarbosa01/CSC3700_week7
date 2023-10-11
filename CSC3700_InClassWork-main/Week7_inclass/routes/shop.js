@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 // const path = require('path');
 // const adminData = require("./admin");
-const productsController = require("../controllers/oproducts");
+const shopController = require("../controllers/shop_controller");
 
-router.get( '/showProducts', productsController.getProducts);
+router.get( '/showProducts', shopController.getProducts);
 
 // router.get(  '/showProducts', (req, res, next) => {
 //     console.log( "----------------");

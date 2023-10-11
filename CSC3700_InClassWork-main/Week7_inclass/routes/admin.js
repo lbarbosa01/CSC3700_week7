@@ -1,31 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-const productsController = require("../controllers/oproducts")
-// let products = [];
-// router.get(  '/add-product', (req, res, next) => {
-//     res.render( 'addProduct',
-//         {
-//             from: 'addProduct'
-//         })
-// });
-router.get( '/add-product', productsController.getAddProduct );
-router.post( '/product', productsController.postAddProduct);
-// router.post(  '/product', (req, res, next) => {
-//     // console.log( req );
-//     console.log("----flag")
-//     let t = req.body.title;
-//     let a = req.body.author;
-//     let p = req.body.price
-//     products.push( {
-//         title: t,
-//         author: a,
-//         price: p
-//     })
-//     res.redirect('/add-product')
-//     // res.send(`Made it to post title:${t}`);
-// });
+const adminController = require("../controllers/admin_controller")
+const shopController = require("../controllers/shop_controller");
 
-// module.exports = router;
-// exports.products = products;
+router.get( '/showAdmin', adminController.getProducts);
+router.get( '/add-product', adminController.getAddProduct );
+router.post( '/product', adminController.postAddProduct);
+router.get( '/deleteItem/:id', adminController.deleteProduct);
+// router.get( '/editItem/:id', adminController.editProduct);
+
 exports.routes = router;
